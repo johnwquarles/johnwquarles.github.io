@@ -1,0 +1,17 @@
+{
+  "name": "johnwquarles.github.io",
+  "version": "1.0.0",
+  "homepage": "https://github.com/johnwquarles/johnwquarles.github.io",
+  "authors": [
+    "johnwquarles <john.w.quarles@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
