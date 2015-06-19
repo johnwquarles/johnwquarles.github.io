@@ -28,6 +28,12 @@
       <div class="link-buttons">
         <div ng-repeat="site in main.mysites" class="link-button"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"></a></div>
       </div>
+      <div class="bottom-half">
+        <p class="separate">Contributions:</p>
+        <div class="contrib-buttons">
+          <div ng-repeat="contrib in main.contribs" class="contrib-button"><a ng-href="{{contrib.link_url}}"><img ng-src="{{contrib.img_url}}" alt="{{contrib.alt}}"></a></div>
+        </div>
+      </div>
     </div>
     <footer></footer>
   </body>
