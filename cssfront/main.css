@@ -1,0 +1,24 @@
+.header {
+  text-align: center; }
+  .header img {
+    margin-top: 6px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    position: relative;
+    top: 10px; }
+  .header h1 {
+    font-family: 'Ceviche One', cursive;
+    color: white;
+    font-size: 80px;
+    margin: 0;
+    -webkit-transition: all 3s linear;
+            transition: all 3s linear; }
+
+body {
+  background-color: black;
+  background-image: url("../img/arahira.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9oZWFkZXIuc2NzcyIsIl9sYXlvdXQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLENBQUE7RUFDTCxVQUFVLEVBQUUsTUFBTyxHQURiO0VBR04sT0FBTyxDQUFDLEdBQUcsQ0FBUDtJQUNGLFVBQVUsRUFBRSxHQUFJO0lBQ2hCLE1BQU0sRUFBRSxJQUFLO0lBQ2IsS0FBSyxFQUFFLElBQUs7SUFDWixhQUFhLEVBQUUsR0FBSTtJQUNuQixRQUFRLEVBQUUsUUFBUztJQUNuQixHQUFHLEVBQUUsSUFBSyxHQU5QO0VBU0wsT0FBTyxDQUFDLEVBQUUsQ0FBUDtJQUNELFdBQVcsRUFBRSxzQkFBdUI7SUFDcEMsS0FBSyxFQUFFLEtBQU07SUFDYixTQUFTLEVBQUUsSUFBSztJQUNoQixNQUFNLEVBQUUsQ0FBRTtJQUNWLFVBQVUsRUFBRSxHQUFHLENBQUMsRUFBRSxDQUFDLE1BQU0sR0FMdkI7O0FDWk4sSUFBSSxDQUFDO0VBQ0gsZ0JBQWdCLEVBQUUsS0FBTTtFQUN4QixnQkFBZ0IsRUFBRSx5QkFBRztFQUNyQixpQkFBaUIsRUFBRSxTQUFVO0VBQzdCLGVBQWUsRUFBRSxTQUFVLEdBSnZCIiwiZmlsZSI6Im1haW4uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlcntcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuXG4gIGltZyB7XG4gICAgbWFyZ2luLXRvcDogNnB4O1xuICAgIGhlaWdodDogODBweDtcbiAgICB3aWR0aDogODBweDtcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHRvcDogMTBweDtcbiAgfVxuXG4gIGgxIHtcbiAgICBmb250LWZhbWlseTogJ0NldmljaGUgT25lJywgY3Vyc2l2ZTtcbiAgICBjb2xvcjogd2hpdGU7XG4gICAgZm9udC1zaXplOiA4MHB4O1xuICAgIG1hcmdpbjogMDtcbiAgICB0cmFuc2l0aW9uOiBhbGwgM3MgbGluZWFyO1xuICB9XG59XG4iLCJib2R5IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybChcIi4uL2ltZy9hcmFoaXJhLmpwZ1wiKTtcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgYmFja2dyb3VuZC1zaXplOiAxMDAlIGF1dG87XG59XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */
