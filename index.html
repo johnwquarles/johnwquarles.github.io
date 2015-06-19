@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" ng-app="indexPage">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +9,19 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="lib/build.css">
   </head>
-  <body>
+  <body ng-controller="Main as main">
     <header>
-      <div class="header"><img src="../img/me.jpeg">
+      <div class="header"><img src="../img/me.jpeg" ng-click="main.iconColorChange()">
         <h1>quarl.es</h1>
       </div>
     </header>
-    <div class="container">
-      <footer></footer>
-      <script src="js/main.js"></script>
-      <script src="lib/build.js"></script>
+    <div class="content">
+      <div class="link-buttons">
+        <div ng-repeat="site in main.mysites" class="link-button"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"></a></div>
+      </div>
     </div>
+    <footer></footer>
   </body>
+  <script src="lib/build.js"></script>
+  <script src="js/main.js"></script>
 </html>
