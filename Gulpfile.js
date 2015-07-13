@@ -142,4 +142,5 @@ gulp.task('cleana', ['clean'], function() {
   gulp.start('jade:prod');
 })
 
+gulp.task('serve', ['connect', 'open']);
 gulp.task('default', ['build:dev', 'connect', 'watch', 'open']);
