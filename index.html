@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>quarl.es</title>
     <link href="http://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=BenchNine" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="lib/build.css">
@@ -19,6 +20,7 @@
           <li><a href="https://twitter.com/johnwquarles"><i class="fa fa-2x fa-twitter"></i></a></li>
           <li><a href="https://github.com/johnwquarles"><i class="fa fa-2x fa-github"></i></a></li>
           <li><a href="https://www.linkedin.com/pub/john-quarles/b8/a9a/805"><i class="fa fa-2x fa-linkedin-square"></i></a></li>
+          <li><a href="https://soundcloud.com/johnwq"><i class="fa fa-2x fa-soundcloud"></i></a></li>
         </ul>
       </div>
       <div class="header"><img src="../img/me.jpeg" ng-click="main.iconColorChange()">
@@ -27,7 +29,12 @@
     </header>
     <div class="content">
       <div class="link-buttons">
-        <div ng-repeat="site in main.mysites" class="link-button"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"></a></div>
+        <div ng-repeat="site in main.features" class="feature-button">
+          <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span>{{site.tech}}</span></span></a></div>
+        </div>
+        <div ng-repeat="site in main.mysites" class="link-button">
+          <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span>{{site.tech}}</span></span></a></div>
+        </div>
       </div>
       <div class="bottom-half">
         <p class="separate">Contributions:</p>
