@@ -8,7 +8,6 @@ angular.module('app.factories')
 
     getMyData(cb) {
       $http.get(codewarsUrl + dataRoute).then(function(res) {
-        console.log(res.data);
         cb(null, res.data);
       }, function(err) {
         cb(err);
@@ -17,7 +16,6 @@ angular.module('app.factories')
 
     getOutOf(cb) {
       $http.get(codewarsUrl + outOfRoute).then(function(res) {
-        console.log(res.data);
         cb(null, res.data);
       }, function(err) {
         cb(err);

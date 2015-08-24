@@ -133,7 +133,14 @@ body {
     // no feature-bottom here; it's block.
     .link-button, .contrib-button {
       display: inline-block;
+    }
+
+    .link-button {
       margin: 0 15px 15px;
+    }
+
+    .contrib-button {
+      margin: 0 15px;
     }
 
     .feature-button {
@@ -165,9 +172,10 @@ body {
   text-align: right;
 
     .separate {
+    vertical-align: bottom;
     display: inline;
     color: $darkerblue;
-    font-size: 50px;
+    font-size: $separateFontSize;
     font-family: 'Ceviche One', cursive;
     transition: all $transitiontime linear;
   }
