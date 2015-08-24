@@ -46,7 +46,7 @@
       </div>
     </header>
     <div class="content">
-      <div class="link-buttons">
+      <div class="top-buttons">
         <div ng-repeat="site in main.features" class="feature-button">
           <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span>{{site.tech}}</span></span></a></div>
         </div>
@@ -56,8 +56,10 @@
       </div>
       <div class="bottom-half">
         <p class="separate">Contributions:</p>
-        <div class="contrib-buttons">
-          <div ng-repeat="contrib in main.contribs" class="contrib-button"><a ng-href="{{contrib.link_url}}"><img ng-src="{{contrib.img_url}}" alt="{{contrib.alt}}"></a></div>
+        <div class="bottom-buttons">
+          <div ng-repeat="contrib in main.contribs" class="contrib-button">
+            <div class="copy-contain"><a ng-href="{{contrib.link_url}}"><img ng-src="{{contrib.img_url}}" alt="{{contrib.alt}}"><span class="copy"><span>{{contrib.copy}}</span></span></a><a ng-href="{{contrib.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span>{{contrib.tech}}</span></span></a></div>
+          </div>
         </div>
       </div>
     </div>

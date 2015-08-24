@@ -13,6 +13,7 @@ $featureHeightS: 276px;
 
 $featureCopyFont: 26px;
 $featureTechFont: 34px;
+$featureGhIcon: 42px;
 
 $linkWidth: 350px;
 $linkHeight: 175px;
@@ -20,11 +21,21 @@ $linkHeightS: 176px;
 
 $linkCopyFont: 20px;
 $linkTechFont: 20px;
+$linkGhIcon: 26px;
 
-$contribWidth: 180px;
-$contribHeight: 90px;
-$contribHeight: 91px;
+$contribWidth: 280px;
+$contribHeight: 140px;
+$contribHeightS: 141px;
+
+$contribCopyFont: 18px;
+$contribTechFont: 18px;
+$contribGhIcon: 22px;
 
 $cwFontSize: 15px;
 $cwLogoHeight: 66px;
 $cwLogoWidth: 58px;
+
+$tint: 0.80;
+$tintTime: 500ms;
+
+$scaleRatio: 1.05;

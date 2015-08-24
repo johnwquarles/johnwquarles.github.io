@@ -1,7 +1,7 @@
 extends ./_partials/_layout
 
 block content
-  .link-buttons
+  .top-buttons
     .feature-button(ng-repeat="site in main.features")
       .copy-contain
         a(ng-href="{{site.link_url}}")
@@ -26,7 +26,14 @@ block content
 
   .bottom-half
     p.separate Contributions:
-    .contrib-buttons
+    .bottom-buttons
       .contrib-button(ng-repeat="contrib in main.contribs")
-        a(ng-href="{{contrib.link_url}}")
-          img(ng-src="{{contrib.img_url}}" alt="{{contrib.alt}}")
+        .copy-contain
+          a(ng-href="{{contrib.link_url}}")
+            img(ng-src="{{contrib.img_url}}" alt="{{contrib.alt}}")
+            span.copy
+              span {{contrib.copy}}
+          a(ng-href="{{contrib.github_url}}")
+            i.fa.fa-2x.fa-github
+            span.tech
+              span {{contrib.tech}}

@@ -19,7 +19,7 @@ body {
       font-size: $featureTechFont;
     }
     a i, a span i {
-      font-size: 42px;
+      font-size: $featureGhIcon;
     }
   }
 
@@ -33,7 +33,23 @@ body {
       font-size: $linkTechFont;
     }
     a i, a span i {
-      font-size: 26px;
+      font-size: $linkGhIcon;
+    }
+  }
+
+  .contrib-button .copy-contain {
+    text-align: center;
+
+    span.copy {
+      height: $contribHeightS;
+      font-size: $contribCopyFont;
+    }
+    span.tech {
+      width: $contribWidth;
+      font-size: $contribTechFont;
+    }
+    a i, a span i {
+      font-size: $contribGhIcon;
     }
   }
 
@@ -42,11 +58,9 @@ body {
     display: inline-block;
     img {
       min-height: 100%;
-      width: $featureWidth;
-      height: $featureHeight;
     }
     span.copy {
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,$tint);
       color: white;
       cursor: pointer;
       position: absolute;
@@ -54,7 +68,7 @@ body {
       left: 0;
       display: table;
       opacity: 0;
-      transition: opacity 1000ms;
+      transition: opacity $tintTime;
     }
     span.copy span {
       font-family: 'BenchNine', sans-serif;
@@ -83,7 +97,7 @@ body {
       position: absolute;
       bottom: 5px;
       left: 0;
-      transition: opacity 1000ms;
+      transition: opacity $tintTime;
 
       span {
         transition: all $transitiontime linear;
@@ -91,11 +105,11 @@ body {
     }
   }
 
-  .link-buttons, .contrib-buttons {
+  .top-buttons, .bottom-buttons {
     display: inline-block;
 
     // remove .contrib-button once they also have copy-contains.
-    .contrib-button, .copy-contain {
+    .copy-contain {
 
       vertical-align: middle;
       transform: translateZ(0);
@@ -116,6 +130,7 @@ body {
       width: 90%;
     }
 
+    // no feature-bottom here; it's block.
     .link-button, .contrib-button {
       display: inline-block;
       margin: 0 15px 15px;
@@ -123,6 +138,10 @@ body {
 
     .feature-button {
       margin: 10px 0px 60px;
+      img {
+        width: $featureWidth;
+        height: $featureHeight;
+      }
     }
 
     .link-button img {
@@ -135,10 +154,8 @@ body {
       height: $contribHeight;
     }
 
-    .link-button:hover, .link-button:focus, .link-button:active,
-    .contrib-button:hover, .contrib-button:focus, .contrib-button:active,
     .copy-contain:hover, .copy-contain:focus, .copy-contain:active {
-      transform: scale(1.05);
+      transform: scale($scaleRatio);
     }
   }
 }
@@ -150,7 +167,7 @@ body {
     .separate {
     display: inline;
     color: $darkerblue;
-    font-size: 28px;
+    font-size: 50px;
     font-family: 'Ceviche One', cursive;
     transition: all $transitiontime linear;
   }
