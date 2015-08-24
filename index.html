@@ -15,19 +15,19 @@
   <body ng-controller="Main as main">
     <header ng-controller="Header as header">
       <div class="topnav">
-        <ul ng-cloak ng-show="codewars" class="left">
+        <ul ng-cloak ng-show="myData &amp;&amp; outOf" class="left">
           <li class="cwlogo"><a href="http://www.codewars.com/users/johnwquarles"><img src="http://dev.codewars.com/images/logo-220ae435.png"></a></li>
           <li class="leftSub">
             <ul class="leftSub">
               <li class="completed">
-                <p>{{codewars.codeChallenges.totalCompleted}} Code Challenges Completed</p>
+                <p>{{myData.codeChallenges.totalCompleted}} Code Challenges Completed</p>
               </li>
               <li class="rank">
-                <p>Leaderboard Position: {{codewars.leaderboardPosition}}</p>
+                <p>Leaderboard Position: {{myData.leaderboardPosition}} / {{outOf}}</p>
               </li>
-              <li class="misc"><span>Overall: {{codewars.ranks.overall.name}}, <span>Javascript: {{codewars.ranks.languages.javascript.name}}, </span><span>C#: {{codewars.ranks.languages.csharp.name}}</span></span></li>
+              <li class="misc"><span>Overall:<span style="color:{{myData.ranks.overall.color}}"> {{myData.ranks.overall.name}},</span><span> Javascript:</span><span style="color:{{myData.ranks.languages.javascript.color}};"> {{myData.ranks.languages.javascript.name}},</span><span> C#:</span><span style="color:{{myData.ranks.languages.csharp.color}}"> {{myData.ranks.languages.csharp.name}}</span></span></li>
               <li class="points">
-                <p>Honor: {{codewars.honor}}, Overall Score: {{codewars.ranks.overall.score}}</p>
+                <p>Honor: {{myData.honor}}, Overall Score: {{myData.ranks.overall.score}}</p>
               </li>
             </ul>
           </li>

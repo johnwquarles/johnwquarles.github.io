@@ -1,15 +1,28 @@
 angular.module('app.factories')
 
 .factory('Ajax', function($http) {
-  var codewarsUrl = 'https://cryptic-hamlet-1630.herokuapp.com/codewars';
+  var codewarsUrl = 'https://cryptic-hamlet-1630.herokuapp.com/';
+  var dataRoute = 'codewarsJQ';
+  var outOfRoute = 'outOf';
   return {
-    getCodewars(cb) {
-      $http.get(codewarsUrl).then(function(res) {
+
+    getMyData(cb) {
+      $http.get(codewarsUrl + dataRoute).then(function(res) {
+        console.log(res.data);
+        cb(null, res.data);
+      }, function(err) {
+        cb(err);
+      })
+    },
+
+    getOutOf(cb) {
+      $http.get(codewarsUrl + outOfRoute).then(function(res) {
         console.log(res.data);
         cb(null, res.data);
       }, function(err) {
         cb(err);
       })
     }
+
   }
 })
