@@ -2,16 +2,17 @@ extends ./_partials/_layout
 
 block content
   .top-buttons
-    .feature-button(ng-repeat="site in main.features")
-      .copy-contain
-        a(ng-href="{{site.link_url}}")
-          img(ng-src="{{site.img_url}}" alt="{{site.alt}}")
-          span.copy
-            span {{site.copy}}
-        a(ng-href="{{site.github_url}}")
-          i.fa.fa-2x.fa-github
-          span.tech
-            span {{site.tech}}
+    .feature-contain
+      .feature-button(ng-repeat="site in main.features")
+        .copy-contain
+          a(ng-href="{{site.link_url}}")
+            img(ng-src="{{site.img_url}}" alt="{{site.alt}}")
+            span.copy
+              span {{site.copy}}
+          a(ng-href="{{site.github_url}}")
+            i.fa.fa-2x.fa-github
+            span.tech
+              span {{site.tech}}
 
     .link-button(ng-repeat="site in main.mysites")
       .copy-contain

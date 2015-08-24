@@ -33,12 +33,30 @@
           </li>
         </ul>
         <ul class="right">
-          <li><a href="mailto:john.w.quarles@gmail.com"><i class="fa fa-2x fa-envelope"></i></a></li>
-          <li><a href="https://qdevdive.blogspot.com/"><i class="fa fa-2x fa-book"></i></a></li>
-          <li><a href="https://twitter.com/johnwquarles"><i class="fa fa-2x fa-twitter"></i></a></li>
-          <li><a href="https://github.com/johnwquarles"><i class="fa fa-2x fa-github"></i></a></li>
-          <li><a href="https://www.linkedin.com/pub/john-quarles/b8/a9a/805"><i class="fa fa-2x fa-linkedin-square"></i></a></li>
-          <li><a href="https://soundcloud.com/johnwq"><i class="fa fa-2x fa-soundcloud"></i></a></li>
+          <div class="link-icon">
+            <li><a href="mailto:john.w.quarles@gmail.com"><i class="fa fa-2x fa-envelope"></i></a></li>
+            <p>email me</p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://qdevdive.blogspot.com/"><i class="fa fa-2x fa-book"></i></a></li>
+            <p>blog</p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://twitter.com/johnwquarles"><i class="fa fa-2x fa-twitter"></i></a></li>
+            <p>twitter</p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://github.com/johnwquarles"><i class="fa fa-2x fa-github"></i></a></li>
+            <p>github</p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://www.linkedin.com/pub/john-quarles/b8/a9a/805"><i class="fa fa-2x fa-linkedin-square"></i></a></li>
+            <p>linkedin</p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://soundcloud.com/johnwq"><i class="fa fa-2x fa-soundcloud"></i></a></li>
+            <p>soundcloud</p>
+          </div>
         </ul>
       </div>
       <div class="header"><img src="img/me.jpeg" ng-click="main.iconColorChange()">
@@ -47,8 +65,10 @@
     </header>
     <div class="content">
       <div class="top-buttons">
-        <div ng-repeat="site in main.features" class="feature-button">
-          <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span>{{site.tech}}</span></span></a></div>
+        <div class="feature-contain">
+          <div ng-repeat="site in main.features" class="feature-button">
+            <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span>{{site.tech}}</span></span></a></div>
+          </div>
         </div>
         <div ng-repeat="site in main.mysites" class="link-button">
           <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span>{{site.tech}}</span></span></a></div>

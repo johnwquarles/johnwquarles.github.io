@@ -108,7 +108,6 @@ body {
   .top-buttons, .bottom-buttons {
     display: inline-block;
 
-    // remove .contrib-button once they also have copy-contains.
     .copy-contain {
 
       vertical-align: middle;
@@ -126,12 +125,8 @@ body {
       }
     }
 
-    .link-buttons {
-      width: 90%;
-    }
-
-    // no feature-bottom here; it's block.
-    .link-button, .contrib-button {
+    // no feature-button here; it's block.
+    .feature-button, .link-button, .contrib-button {
       display: inline-block;
     }
 

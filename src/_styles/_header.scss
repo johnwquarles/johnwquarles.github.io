@@ -45,9 +45,28 @@
     float: right;
     margin: 5px 0;
 
-    li:hover, li:focus, li:active {
-      transform: translateY(-5px);
+    .link-icon:hover li, .link-icon:focus li, .link-icon:active li, {
+      transform: translateY($headerIconUp);
       /* move the element up by 5px */
+    }
+
+    .link-icon:hover p, .link-icon p:hover {
+      opacity: 1;
+    }
+
+    .link-icon {
+      display: inline-block;
+      text-align: center;
+      transition: all $transitiontime linear;
+      p {
+        position: relative;
+        bottom: $headerIconFontShiftUp;
+        opacity: 0;
+        color: white;
+        margin: 0;
+        font-size: $headerIconFontSize;
+        transition: color $transitiontime linear, opacity $textUnderIconsTransition cubic-bezier(0,.33,.18,1);
+      }
     }
 
     li {
