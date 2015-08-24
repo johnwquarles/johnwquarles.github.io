@@ -62,10 +62,14 @@
         position: relative;
         bottom: $headerIconFontShiftUp;
         opacity: 0;
-        color: white;
         margin: 0;
         font-size: $headerIconFontSize;
-        transition: color $transitiontime linear, opacity $textUnderIconsTransition cubic-bezier(0,.33,.18,1);
+        transition: opacity $textUnderIconsTransition cubic-bezier(0,.33,.18,1);
+        a {
+          color: white;
+          text-decoration: none;
+          transition: color $transitiontime linear;
+        }
       }
     }
 
