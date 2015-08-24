@@ -1,21 +1,38 @@
 <!DOCTYPE html>
-<html lang="en-US" ng-app="indexPage">
+<html lang="en-US" ng-app="app">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>quarl.es</title>
     <link href="http://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=BenchNine" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto|Ceviche+One|BenchNine" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="lib/build.css">
     <link rel="icon" href="favicon.png" type="image/x-icon">
   </head>
   <body ng-controller="Main as main">
-    <header>
+    <header ng-controller="Header as header">
       <div class="topnav">
-        <ul>
+        <ul ng-cloak ng-show="codewars" class="left">
+          <li class="cwlogo"><a href="http://www.codewars.com/users/johnwquarles"><img src="http://dev.codewars.com/images/logo-220ae435.png"></a></li>
+          <li class="leftSub">
+            <ul class="leftSub">
+              <li class="completed">
+                <p>{{codewars.codeChallenges.totalCompleted}} Code Challenges Completed</p>
+              </li>
+              <li class="rank">
+                <p>Leaderboard Position: {{codewars.leaderboardPosition}}</p>
+              </li>
+              <li class="misc"><span>Overall: {{codewars.ranks.overall.name}}, <span>Javascript: {{codewars.ranks.languages.javascript.name}}, </span><span>C#: {{codewars.ranks.languages.csharp.name}}</span></span></li>
+              <li class="points">
+                <p>Honor: {{codewars.honor}}, Overall Score: {{codewars.ranks.overall.score}}</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
           <li><a href="mailto:john.w.quarles@gmail.com"><i class="fa fa-2x fa-envelope"></i></a></li>
           <li><a href="https://qdevdive.blogspot.com/"><i class="fa fa-2x fa-book"></i></a></li>
           <li><a href="https://twitter.com/johnwquarles"><i class="fa fa-2x fa-twitter"></i></a></li>
@@ -47,5 +64,11 @@
     <footer></footer>
   </body>
   <script src="lib/build.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/factories.js"></script>
+  <script src="js/HeaderCtrl.js"></script>
+  <script src="js/MainCtrl.js"></script>
+  <script src="js/AjaxFac.js"></script>
+  <script src="js/ColorsFac.js"></script>
 </html>
