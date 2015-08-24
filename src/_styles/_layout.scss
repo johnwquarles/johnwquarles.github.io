@@ -1,0 +1,157 @@
+body {
+  background-color: black;
+  background-image: url("../img/arahira.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.content {
+
+  text-align: center;
+
+  .feature-button .copy-contain {
+    span.copy {
+      height: $featureHeightS;
+      font-size: $featureCopyFont;
+    }
+    span.tech {
+      width: $featureWidth;
+      font-size: $featureTechFont;
+    }
+    a i, a span i {
+      font-size: 42px;
+    }
+  }
+
+  .link-button .copy-contain {
+    span.copy {
+      height: $linkHeightS;
+      font-size: $linkCopyFont;
+    }
+    span.tech {
+      width: $linkWidth;
+      font-size: $linkTechFont;
+    }
+    a i, a span i {
+      font-size: 26px;
+    }
+  }
+
+  .copy-contain {
+    position: relative;
+    display: inline-block;
+    img {
+      min-height: 100%;
+      width: $featureWidth;
+      height: $featureHeight;
+    }
+    span.copy {
+      background: rgba(0,0,0,0.7);
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: table;
+      opacity: 0;
+      transition: opacity 1000ms;
+    }
+    span.copy span {
+      font-family: 'BenchNine', sans-serif;
+      opacity: 1;
+      display: table-cell;
+      vertical-align: top;
+      padding: 20px;
+      transition: all $transitiontime linear;
+    }
+    a:hover span.copy, a:first-child:hover + a span.tech, a:hover span.tech, {
+      opacity: 1;
+    }
+    a i {
+      color: $ghIconBlue;
+      position: absolute;
+      bottom: 7px;
+      left: 7px;
+      transition: all $transitiontime linear;
+    }
+
+    span.tech {
+      //background: rgba(0,0,0,0.5);
+      opacity: 0;
+      color: $techCopyBlue;
+      font-family: 'BenchNine', sans-serif;
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      transition: opacity 1000ms;
+
+      span {
+        transition: all $transitiontime linear;
+      }
+    }
+  }
+
+  .link-buttons, .contrib-buttons {
+    display: inline-block;
+
+    // remove .contrib-button once they also have copy-contains.
+    .contrib-button, .copy-contain {
+
+      vertical-align: middle;
+      transform: translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      backface-visibility: hidden;
+      transition-duration: 0.3s;
+      transition-property: transform;
+
+      img {
+        border: 1px solid $darkerblue;
+        border-radius: 2px;
+        transition: all $transitiontime linear;
+        //box-shadow: -1px 1px 4px 0px;
+      }
+    }
+
+    .link-buttons {
+      width: 90%;
+    }
+
+    .link-button, .contrib-button {
+      display: inline-block;
+      margin: 0 15px 15px;
+    }
+
+    .feature-button {
+      margin: 10px 0px 60px;
+    }
+
+    .link-button img {
+      width: $linkWidth;
+      height: $linkHeight;
+    }
+
+    .contrib-button img {
+      width: $contribWidth;
+      height: $contribHeight;
+    }
+
+    .link-button:hover, .link-button:focus, .link-button:active,
+    .contrib-button:hover, .contrib-button:focus, .contrib-button:active,
+    .copy-contain:hover, .copy-contain:focus, .copy-contain:active {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.bottom-half {
+  margin: 40px 0 0;
+  text-align: right;
+
+    .separate {
+    display: inline;
+    color: $darkerblue;
+    font-size: 28px;
+    font-family: 'Ceviche One', cursive;
+    transition: all $transitiontime linear;
+  }
+}

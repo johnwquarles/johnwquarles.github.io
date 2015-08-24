@@ -1,0 +1,99 @@
+.topnav {
+  font-family: 'Roboto', sans-serif;
+  ul {
+    padding-left: 5px;
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      p, span {
+        transition: all $transitiontime linear;
+      }
+    }
+  }
+
+  ul.left {
+    float: left;
+    color: white;
+    margin-top: -14px;
+
+    li.leftSub {
+      margin-left: 5px;
+    }
+
+    ul.leftSub {
+      font-size: 14px;
+    }
+
+    ul.leftSub {
+      display: inline;
+
+      li {
+        display: block;
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    li.cwlogo img {
+      height: 65px;
+      width: 60px;
+      display: inline;
+      position: relative;
+      bottom: 16px;
+    }
+  }
+
+  ul.right {
+    float: right;
+    margin: 5px 0;
+
+    li:hover, li:focus, li:active {
+      transform: translateY(-5px);
+      /* move the element up by 5px */
+    }
+
+    li {
+      margin: 0 5px;
+      vertical-align: middle;
+      transform: translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      position: relative;
+      transition-duration: 0.3s;
+      transition-property: transform;
+
+      i {
+        color: white;
+        transition: all $transitiontime linear;
+      }
+    }
+  }
+}
+
+.header{
+  clear: both;
+  text-align: center;
+  margin: 30px 0 30px;
+
+  img {
+    height: 120px;
+    width: 120px;
+    border-radius: 2px;
+    border: 1px solid black;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+
+    transition: all $transitiontime linear;
+  }
+
+  h1 {
+    font-family: 'Ceviche One', cursive;
+    color: $darkerblue;
+    font-size: 100px;
+    margin: 0;
+    transition: all $transitiontime linear;
+  }
+}

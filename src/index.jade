@@ -1,0 +1,32 @@
+extends ./_partials/_layout
+
+block content
+  .link-buttons
+    .feature-button(ng-repeat="site in main.features")
+      .copy-contain
+        a(ng-href="{{site.link_url}}")
+          img(ng-src="{{site.img_url}}" alt="{{site.alt}}")
+          span.copy
+            span {{site.copy}}
+        a(ng-href="{{site.github_url}}")
+          i.fa.fa-2x.fa-github
+          span.tech
+            span {{site.tech}}
+
+    .link-button(ng-repeat="site in main.mysites")
+      .copy-contain
+        a(ng-href="{{site.link_url}}")
+          img(ng-src="{{site.img_url}}" alt="{{site.alt}}")
+          span.copy
+            span {{site.copy}}
+        a(ng-href="{{site.github_url}}")
+          i.fa.fa-2x.fa-github
+          span.tech
+            span {{site.tech}}
+
+  .bottom-half
+    p.separate Contributions:
+    .contrib-buttons
+      .contrib-button(ng-repeat="contrib in main.contribs")
+        a(ng-href="{{contrib.link_url}}")
+          img(ng-src="{{contrib.img_url}}" alt="{{contrib.alt}}")
