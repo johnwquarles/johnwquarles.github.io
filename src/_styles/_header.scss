@@ -90,7 +90,7 @@
   }
 }
 
-.header{
+.headerPart{
   clear: both;
   text-align: center;
   margin: 30px 0 30px;
@@ -114,4 +114,8 @@
     margin: 0;
     transition: all $transitiontime linear;
   }
+}
+
+.ng-hide {
+  visibility: hidden;
 }

@@ -2,7 +2,7 @@ angular.module('app.controllers')
 
 .controller('Main', function (Colors, Features, Links, Contribs, $scope){
   var vm = this;
-  var title = document.querySelector(".header h1");
+  var title = document.querySelector(".headerPart h1");
   var randomColor = Colors.randomColor();
   var changeTime = 3000;
   var startTime;
