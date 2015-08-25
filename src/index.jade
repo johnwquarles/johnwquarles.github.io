@@ -12,7 +12,7 @@ block content
           a(ng-href="{{site.github_url}}")
             i.fa.fa-2x.fa-github
             span.tech
-              span {{site.tech}}
+              span(ng-cloak) {{site.tech}}
 
     .link-button(ng-repeat="site in main.mysites")
       .copy-contain
@@ -23,7 +23,7 @@ block content
         a(ng-href="{{site.github_url}}")
           i.fa.fa-2x.fa-github
           span.tech
-            span {{site.tech}}
+            span(ng-cloak) {{site.tech}}
 
   .bottom-half
     p.separate Contributions:
@@ -37,4 +37,4 @@ block content
           a(ng-href="{{contrib.github_url}}")
             i.fa.fa-2x.fa-github
             span.tech
-              span {{contrib.tech}}
+              span(ng-cloak) {{contrib.tech}}
