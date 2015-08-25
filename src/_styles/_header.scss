@@ -101,7 +101,7 @@
     border-radius: 2px;
     border: 1px solid black;
     position: relative;
-    top: 10px;
+    //top: 10px;
     cursor: pointer;
 
     transition: all $transitiontime linear;
@@ -116,6 +116,6 @@
   }
 }
 
-.ng-hide {
+.hidden {
   visibility: hidden;
 }

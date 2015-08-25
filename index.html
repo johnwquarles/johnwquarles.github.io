@@ -15,7 +15,7 @@
   <body ng-controller="Main as main">
     <header ng-controller="Header as header"><span us-spinner="{radius: 10, width: 5, length: 12, color: '#FFF', position: absolute, top: '42px', left: '160px'}" spinner-key="codewars"></span>
       <div class="topnav">
-        <ul ng-cloak ng-show="myData &amp;&amp; outOf" class="left">
+        <ul ng-cloak ng-class="{'hidden': loading}" class="left">
           <li class="cwlogo"><a href="http://www.codewars.com/users/johnwquarles"><img src="http://dev.codewars.com/images/logo-220ae435.png"></a></li>
           <li class="leftSub">
             <ul class="leftSub">

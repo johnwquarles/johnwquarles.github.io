@@ -7,23 +7,26 @@ angular.module('app.controllers')
   // no reason for that, so I've done the below.
 
   // $timeout: https://github.com/urish/angular-spinner/issues/26
+  $scope.loading = true;
+
   $timeout(function() {
     usSpinnerService.spin('codewars');
   }, 0);
 
   Ajax.getMyData(function(err, data) {
     $scope.myData = data;
-    endSpinner();
+    endLoading();
   });
   Ajax.getOutOf(function(err, data) {
     var outOf = commafy(data.totalCompleted);
     $scope.outOf = outOf;
-    endSpinner();
+    endLoading();
   })
 
-  function endSpinner() {
+  function endLoading() {
     if ($scope.myData && $scope.outOf) {
       usSpinnerService.stop('codewars');
+      $scope.loading = false;
     }
   }
 
