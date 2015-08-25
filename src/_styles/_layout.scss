@@ -56,9 +56,9 @@ body {
   .copy-contain {
     position: relative;
     display: inline-block;
-    img {
-      min-height: 100%;
-    }
+    // img {
+    //   min-height: 100%;
+    // }
     span.copy {
       background: rgba(0,0,0,$tint);
       color: white;
