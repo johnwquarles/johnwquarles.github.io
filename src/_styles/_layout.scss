@@ -130,14 +130,6 @@ body {
       display: inline-block;
     }
 
-    .link-button {
-      margin: 0 15px 15px;
-    }
-
-    .contrib-button {
-      margin: 0 15px;
-    }
-
     .feature-button {
       margin: 10px 0px 60px;
       img {
@@ -146,14 +138,20 @@ body {
       }
     }
 
-    .link-button img {
-      width: $linkWidth;
-      height: $linkHeight;
+    .link-button {
+      margin: 0 15px 15px;
+      img {
+        width: $linkWidth;
+        height: $linkHeight;
+      }
     }
 
-    .contrib-button img {
-      width: $contribWidth;
-      height: $contribHeight;
+    .contrib-button {
+      margin: 0 15px;
+      img {
+        width: $contribWidth;
+        height: $contribHeight;
+      }
     }
 
     .copy-contain:hover, .copy-contain:focus, .copy-contain:active {
@@ -167,11 +165,11 @@ body {
   text-align: right;
 
     .separate {
-    vertical-align: bottom;
-    display: inline;
-    color: $darkerblue;
-    font-size: $separateFontSize;
-    font-family: 'Ceviche One', cursive;
-    transition: all $transitiontime linear;
+      vertical-align: bottom;
+      display: inline;
+      color: $darkerblue;
+      font-size: $separateFontSize;
+      font-family: 'Ceviche One', cursive;
+      transition: all $transitiontime linear;
   }
 }
