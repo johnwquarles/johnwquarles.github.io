@@ -1,0 +1,65 @@
+// ----- iPad ---- //
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+  .content {
+
+    .feature-button .copy-contain {
+      span.copy {
+        display: none;
+      }
+      span.tech {
+        opacity: 1;
+        color: white;
+      }
+    }
+
+    .link-button .copy-contain {
+      span.copy {
+        display: none;
+      }
+      span.tech {
+        width: 260px;
+        opacity: 1;
+        color: white;
+        font-size: 14px;
+      }
+    }
+
+    .contrib-button .copy-contain {
+      span.copy {
+        display: none;
+      }
+      span.tech {
+        width: 200px;
+        opacity: 1;
+        color: white;
+        font-size: 10px;
+      }
+    }
+
+    .top-buttons, .bottom-buttons {
+
+      .link-button {
+        img {
+          width: 260px;
+          height: 130px;
+        }
+      }
+
+      .contrib-button {
+        margin: 0 12px;
+        img {
+          width: 200px;
+          height: 100px;
+        }
+      }
+
+    }
+  }
+
+  .bottom-half {
+    .separate {
+      font-size: 34px;
+    }
+  }
+
+}

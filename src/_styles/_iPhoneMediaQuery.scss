@@ -1,5 +1,5 @@
-// ----- iPad ---- //
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+// ----- iPhone ---- //
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px)  {
   .content {
 
     .feature-button .copy-contain {
@@ -7,8 +7,13 @@
         display: none;
       }
       span.tech {
+        width: 260px;
         opacity: 1;
         color: white;
+        font-size: 24px;
+      }
+      a i, a span i {
+        font-size: $linkGhIcon;
       }
     }
 
@@ -38,7 +43,16 @@
 
     .top-buttons, .bottom-buttons {
 
+      .feature-button {
+        margin: 2px 0;
+        img {
+          width: 260px;
+          height: 130px;
+        }
+      }
+
       .link-button {
+        margin: 0;
         img {
           width: 260px;
           height: 130px;
@@ -57,8 +71,41 @@
   }
 
   .bottom-half {
-      .separate {
+    text-align: center;
+    margin: 20px 0 20px;
+    .separate {
       font-size: 34px;
+    }
+  }
+
+  // ------- header section -------
+  .topnav {
+    ul {
+      text-align: center;
+    }
+
+    ul.left {
+      display:none;
+    }
+
+    ul.right {
+      float: none;
+      margin: 20px 0;
+
+      .link-icon {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .headerPart{
+    clear: both;
+    text-align: center;
+    margin: 0 0 30px;
+
+    img {
+      height: 110px;
+      width: 110px;
     }
   }
 
