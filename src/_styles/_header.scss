@@ -15,6 +15,7 @@
   }
 
   ul.left {
+    margin: 5px 0 0;
     float: left;
     color: white;
 
@@ -43,7 +44,7 @@
 
   ul.right {
     float: right;
-    margin: 5px 0;
+    margin: 5px 0 55px;
 
     .link-icon:hover li, .link-icon:focus li, .link-icon:active li, {
       transform: translateY($headerIconUp);
@@ -93,7 +94,7 @@
 .headerPart{
   clear: both;
   text-align: center;
-  margin: 30px 0 30px;
+  margin: 30px 0 10px;
 
   img {
     height: 120px;
