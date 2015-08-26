@@ -161,15 +161,14 @@ body {
 }
 
 .bottom-half {
-  margin: 40px 0 0;
-  text-align: right;
+  text-align: center;
 
     .separate {
-      vertical-align: bottom;
-      display: inline;
+      margin: 10px 0 28px;
+      display: block;
       color: $darkerblue;
       font-size: $separateFontSize;
-      font-family: 'Ceviche One', cursive;
+      font-family: 'Passion One', cursive;
       transition: all $transitiontime linear;
   }
 }
