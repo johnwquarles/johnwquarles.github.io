@@ -5,7 +5,7 @@ angular.module('app.factories')
     { img_url: "../img/earthinvasion.png",
       link_url: "http://quarl.es/earthinvasion",
       alt: "Earth Invasion",
-      github_url: "https://github.com/johnwquarles",
+      github_url: "https://github.com/johnwquarles/earthinvasion",
       tech: "Tech: C#, Unity 3D",
       copy: "The invasion has begun! Take control \
             of the earth's last remaining defenses and fight \

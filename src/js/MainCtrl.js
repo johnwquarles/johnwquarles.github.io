@@ -1,6 +1,6 @@
 angular.module('app.controllers')
 
-.controller('Main', function (Colors, Features, Links, Contribs, $scope){
+.controller('Main', function (Colors, Features, Links, Contribs){
   var vm = this;
   var title = document.querySelector(".headerPart h1");
   var randomColor = Colors.randomColor();
@@ -19,7 +19,7 @@ angular.module('app.controllers')
   }, changeTime)
 
   vm.iconColorChange = function() {
-    var icons = [].slice.call(document.querySelectorAll(".link-button img, .contrib-button img, .feature-button img, .header img, i, span.tech"));
+    var icons = [].slice.call(document.querySelectorAll(".link-button img, .contrib-button img, .feature-button img, .header img, i, span.tech, p.separate"));
     var lis = [].slice.call(document.querySelectorAll(".topnav ul li i, .topnav p, .topnav span, .topnav a"));
     var nowTime = new Date().getTime();
     var deltaTime = nowTime - startTime;
