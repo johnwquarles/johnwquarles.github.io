@@ -1,0 +1,32 @@
+doctype html
+html(lang="en-US" ng-app="app")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    block title
+      title quarl.es
+    link(href='http://fonts.googleapis.com/css?family=Roboto|Passion+One|BenchNine' rel='stylesheet' type='text/css')
+    link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href="css/main.css")
+    link(rel="stylesheet", href="lib/build.css")
+    link(rel="icon" href="favicon.png" type="image/x-icon")
+  body(ng-controller="Main as main")
+    include _header
+
+    .content
+      block content
+
+    include _footer
+
+  script(src="lib/build.js")
+  script(src="js/app.js")
+  script(src="js/controllers.js")
+  script(src="js/factories.js")
+  script(src="js/HeaderCtrl.js")
+  script(src="js/MainCtrl.js")
+  script(src="js/AjaxFac.js")
+  script(src="js/ColorsFac.js")
+  script(src="js/FeaturesFac.js")
+  script(src="js/LinksFac.js")
+  script(src="js/ContribsFac.js")
