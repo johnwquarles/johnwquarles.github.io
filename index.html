@@ -66,18 +66,18 @@
       <div class="top-buttons">
         <div class="feature-contain">
           <div ng-repeat="site in main.features" class="feature-button">
-            <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{site.tech}}</span></span></a></div>
+            <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="./img/{{site.img}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{site.tech}}</span></span></a></div>
           </div>
         </div>
         <div ng-repeat="site in main.mysites" class="link-button">
-          <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="{{site.img_url}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{site.tech}}</span></span></a></div>
+          <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="./img/{{site.img}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{site.tech}}</span></span></a></div>
         </div>
       </div>
       <div class="bottom-half">
         <p class="separate">Contributions:</p>
         <div class="bottom-buttons">
           <div ng-repeat="contrib in main.contribs" class="contrib-button">
-            <div class="copy-contain"><a ng-href="{{contrib.link_url}}"><img ng-src="{{contrib.img_url}}" alt="{{contrib.alt}}"><span class="copy"><span>{{contrib.copy}}</span></span></a><a ng-href="{{contrib.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{contrib.tech}}</span></span></a></div>
+            <div class="copy-contain"><a ng-href="{{contrib.link_url}}"><img ng-src="./img/{{contrib.img}}" alt="{{contrib.alt}}"><span class="copy"><span>{{contrib.copy}}</span></span></a><a ng-href="{{contrib.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{contrib.tech}}</span></span></a></div>
           </div>
         </div>
       </div>
