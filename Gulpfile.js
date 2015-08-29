@@ -140,7 +140,6 @@ gulp.task('copy', function() {
 gulp.task('deploy', function(done) {
   return gulp.src('./public/**/**')
     .pipe($.ghPages({branch: "master"}));
-  $.del('.publish', done);
 });
 
 gulp.task('open', ['build:dev', 'connect', 'watch'], function() {
