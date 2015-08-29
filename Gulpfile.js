@@ -81,6 +81,8 @@ gulp.task('babel:dev', function () {
 })
 
 gulp.task('babel:prod', function () {
+  // can uglify here but will need to
+  // change Angular code to deal w/that.
   gulp
     .src('src/js/*.js')
     .pipe($.babel())
