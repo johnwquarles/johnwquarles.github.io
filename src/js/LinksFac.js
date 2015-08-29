@@ -2,7 +2,7 @@ angular.module('app.factories')
 
 .factory('Links', function() {
   return [
-    { img_url: "../img/movieagenda.png",
+    { img: "movieagenda.png",
       link_url: "http://quarl.es/movieagenda",
       alt: "Movie Agenda",
       github_url: "https://github.com/johnwquarles/movieagenda",
@@ -11,7 +11,7 @@ angular.module('app.factories')
             with MovieAgenda and have Metacritic & Rotten Tomato scores, \
             MPAA ratings, trailers and assorted clips all at your fingertips."},
 
-    { img_url: "../img/blackjack.png",
+    { img: "blackjack.png",
       link_url: "http://quarl.es/blackjack",
       alt: "Blackjack",
       github_url: "https://github.com/johnwquarles/blackjack",
@@ -19,7 +19,7 @@ angular.module('app.factories')
       copy: "Need a hit? Play a few hands of no-stakes Blackjack \
             and keep your bank account intact."},
 
-    { img_url: "../img/weather-app.png",
+    { img: "weather-app.png",
       link_url: "http://quarl.es/weather-app",
       alt: "Weather App",
       github_url: "https://github.com/johnwquarles/weather-app",
@@ -29,7 +29,7 @@ angular.module('app.factories')
             Get your forecast by zip code or geolocation! \
             And for goodness' sake, check the five-day!"},
 
-    { img_url: "../img/stocksbocks.png",
+    { img: "stocksbocks.png",
       link_url: "http://quarl.es/stocksbocks",
       alt: "Stocksbocks",
       github_url: "https://github.com/johnwquarles/stocksbocks/tree/gh-pages",
@@ -38,7 +38,7 @@ angular.module('app.factories')
             and you know bocks. So prepare to have your socks rocked, doc! \
             Presenting STOCKSBOCKS."},
 
-    { img_url: "../img/armolegeddon.png",
+    { img: "armolegeddon.png",
       link_url: "http://quarl.es/armolegeddon",
       alt: "Armolegeddon",
       github_url: "https://github.com/johnwquarles/armolegeddon/tree/gh-pages",
@@ -46,7 +46,7 @@ angular.module('app.factories')
       copy: "Moles! Holes! See if you can bop more of them than I can setTimeouts. \
             Thinking about it though, no, that's definitely impossible."},
 
-    { img_url: "../img/sketchy-etch.png",
+    { img: "sketchy-etch.png",
       link_url: "http://quarl.es/sketchy-etch",
       alt: "Sketchy-Etch",
       github_url: "https://github.com/johnwquarles/sketchy-etch",

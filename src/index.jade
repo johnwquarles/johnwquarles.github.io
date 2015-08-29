@@ -6,7 +6,7 @@ block content
       .feature-button(ng-repeat="site in main.features")
         .copy-contain
           a(ng-href="{{site.link_url}}")
-            img(ng-src="{{site.img_url}}" alt="{{site.alt}}")
+            img(ng-src="./img/{{site.img}}" alt="{{site.alt}}")
             span.copy
               span {{site.copy}}
           a(ng-href="{{site.github_url}}")
@@ -17,7 +17,7 @@ block content
     .link-button(ng-repeat="site in main.mysites")
       .copy-contain
         a(ng-href="{{site.link_url}}")
-          img(ng-src="{{site.img_url}}" alt="{{site.alt}}")
+          img(ng-src="./img/{{site.img}}" alt="{{site.alt}}")
           span.copy
             span {{site.copy}}
         a(ng-href="{{site.github_url}}")
@@ -31,7 +31,7 @@ block content
       .contrib-button(ng-repeat="contrib in main.contribs")
         .copy-contain
           a(ng-href="{{contrib.link_url}}")
-            img(ng-src="{{contrib.img_url}}" alt="{{contrib.alt}}")
+            img(ng-src="./img/{{contrib.img}}" alt="{{contrib.alt}}")
             span.copy
               span {{contrib.copy}}
           a(ng-href="{{contrib.github_url}}")

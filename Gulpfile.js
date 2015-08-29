@@ -1,29 +1,30 @@
-// run gulp clean manually.
-// I don't know. Bug?
-
 var gulp = require('gulp'),
     $    = require('gulp-load-plugins')({
       pattern: ['gulp-*', 'del', 'main-bower-files']
     }),
     wiredep = require('wiredep').stream;
 
-// gulp.task('clean', function () {
-//   // note that what's below isn't gulp.~~~; del isn't a gulp module
-//   // and can be used outside of the gulp context.
-//   $.del('./.');
-// });
+gulp.task('clean', function (done) {
+ // note that what's below isn't gulp.~~~; del isn't a gulp module
+ // and can be used outside of the gulp context.
+ $.del('public', done);
+});
 
 gulp.task('bower', function() {
   gulp
     .src($.mainBowerFiles('**/*.js'))
     .pipe($.concat('build.js'))
-    .pipe(gulp.dest('./lib'));
+    .pipe(gulp.dest('./public/lib'));
   gulp
     .src('bower_components/**/*.css')
     .pipe($.concat('build.css'))
     .pipe($.cssmin())
-    .pipe(gulp.dest('./lib'));
+    .pipe(gulp.dest('./public/lib'));
 });
+
+// not using wiredep, but destination folder here is probably ok
+// since you'd want to get the dependencies listed correctly and *then*
+// compile with Jade (I think wiredep does its thing first).
 
 gulp.task('wiredep', function() {
   gulp.src('./src/_partials/_layout.jade')
@@ -34,11 +35,11 @@ gulp.task('wiredep', function() {
 gulp.task('jade:dev', function () {
   gulp
     // no _* (partials)
-    .src(['src/**/*.jade'])
+    .src(['src/**/*.jade', '!src/**/_*.jade'])
     .pipe($.jade({
       pretty: true
     }))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./public'))
     .pipe($.connect.reload());
 });
 
@@ -47,7 +48,7 @@ gulp.task('jade:prod', function () {
     // no _* (partials)
     .src(['src/**/*.jade', '!src/**/_*.jade'])
     .pipe($.jade())
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./public'))
 });
 
 gulp.task('sass:dev', function () {
@@ -60,7 +61,7 @@ gulp.task('sass:dev', function () {
        browsers: ['> 1%'],
        cascade: true
      }))
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('./public/css'))
     .pipe($.connect.reload());
 });
 
@@ -76,7 +77,7 @@ gulp.task('sass:prod', function () {
      browsers: ['> 1%'],
      cascade: true
    }))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('babel:dev', function () {
@@ -87,7 +88,7 @@ gulp.task('babel:dev', function () {
       sourceMaps: 'inline'
     }))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest('./public/js'))
     .pipe($.connect.reload());
 })
 
@@ -95,16 +96,16 @@ gulp.task('babel:prod', function () {
   gulp
     .src('src/js/*.js')
     .pipe($.babel())
-    .pipe(gulp.dest('./js'));
+    .pipe(gulp.dest('./public/js'));
 })
 
-gulp.task('build:prod', function () {
-  gulp.start(['jade:prod', 'sass:prod', 'babel:prod', 'bower']);
+gulp.task('build:prod', ['clean'], function () {
+  gulp.start(['jade:prod', 'sass:prod', 'babel:prod', 'bower', 'copy']);
   //gulp.start(['jade:prod', 'sass:prod', 'babel:prod']);
 });
 
-gulp.task('build:dev', function () {
-  gulp.start(['jade:dev', 'sass:dev', 'babel:dev', 'bower']);
+gulp.task('build:dev', ['clean'], function () {
+  gulp.start(['jade:dev', 'sass:dev', 'babel:dev', 'bower', 'copy']);
   //gulp.start(['jade:prod', 'sass:prod', 'babel:prod']);
 });
 
@@ -118,7 +119,7 @@ var livereload_port = randomPort();
 gulp.task('connect', function() {
   $.connect.server({
     port: random_port,
-    root: '.',
+    root: './public',
     livereload: {port: livereload_port}
   });
 });
@@ -129,18 +130,26 @@ gulp.task('watch', function () {
   gulp.watch(['src/**/*.js'], ['babel:dev'])
 });
 
-gulp.task('open', function() {
-  var options = {
-    url: 'http://localhost:' + random_port,
-    app: 'Google Chrome'
-  };
-  gulp.src('./index.html')
-    .pipe($.open('', options));
+gulp.task('copy', function() {
+  gulp.src(['src/img/**'])
+    .pipe(gulp.dest('public/img'));
+  gulp.src(['src/favicon.png', 'src/CNAME'])
+    .pipe(gulp.dest('public'));
 });
 
-//gulp.task('cleana', ['clean'], function() {
-//  gulp.start('jade:prod');
-//})
+gulp.task('deploy', function(done) {
+  return gulp.src('./public/**/**')
+    .pipe($.ghPages({branch: "master"}));
+  $.del('.publish', done);
+});
 
-gulp.task('serve', ['connect', 'open']);
-gulp.task('default', ['build:dev', 'connect', 'watch', 'open']);
+gulp.task('open', ['build:dev', 'connect', 'watch'], function() {
+  var options = {
+    uri: 'localhost:' + random_port,
+    app: 'Google Chrome'
+  };
+  gulp.src('./public/index.html')
+    .pipe($.open('<%file.path%>', options));
+});
+
+gulp.task('default', ['open']);

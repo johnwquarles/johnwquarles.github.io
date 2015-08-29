@@ -85,7 +85,7 @@
     }
 
     ul.left {
-      display:none;
+      display: none;
     }
 
     ul.right {
@@ -93,9 +93,14 @@
       margin: 20px 0;
 
       .link-icon {
-        font-size: 18px;
+        font-size: 16px;
       }
+      .link-icon:last-child {
+        display: none;
+      }
+
     }
+
   }
 
   .headerPart{

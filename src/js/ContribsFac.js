@@ -3,7 +3,7 @@ angular.module('app.factories')
 .factory('Contribs', function() {
   return [
 
-    { img_url: "../img/snacktn.png",
+    { img: "snacktn.png",
       link_url: "http://snacktn.com",
       alt: "Snack TN",
       github_url: "https://github.com/RJFryman/snack_tennessee",
@@ -11,7 +11,7 @@ angular.module('app.factories')
       copy: "Snack Tennessee showcases Tennessee's local foods, beverages and producers. Created \
             in 48 hours at Hack Tennessee 2015."},
 
-    { img_url: "../img/nashculturecrawl.png",
+    { img: "nashculturecrawl.png",
       link_url: "http://james-logan.github.io/nashville-adventure/",
       alt: "Nashville Culture Crawl",
       github_url: "https://github.com/james-logan/nashville-adventure",
