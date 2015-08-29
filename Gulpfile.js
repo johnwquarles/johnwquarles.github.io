@@ -4,24 +4,6 @@ var gulp = require('gulp'),
     }),
     wiredep = require('wiredep').stream;
 
-gulp.task('clean', function (done) {
- // note that what's below isn't gulp.~~~; del isn't a gulp module
- // and can be used outside of the gulp context.
- $.del('public', done);
-});
-
-gulp.task('bower', function() {
-  gulp
-    .src($.mainBowerFiles('**/*.js'))
-    .pipe($.concat('build.js'))
-    .pipe(gulp.dest('./public/lib'));
-  gulp
-    .src('bower_components/**/*.css')
-    .pipe($.concat('build.css'))
-    .pipe($.cssmin())
-    .pipe(gulp.dest('./public/lib'));
-});
-
 // not using wiredep, but destination folder here is probably ok
 // since you'd want to get the dependencies listed correctly and *then*
 // compile with Jade (I think wiredep does its thing first).
@@ -31,6 +13,12 @@ gulp.task('wiredep', function() {
     .pipe(wiredep())
     .pipe(gulp.dest('./src/_partials'));
 })
+
+gulp.task('clean', function (done) {
+ // note that what's below isn't gulp.~~~; del isn't a gulp module
+ // and can be used outside of the gulp context.
+ $.del('public', done);
+});
 
 gulp.task('jade:dev', function () {
   gulp
@@ -99,19 +87,32 @@ gulp.task('babel:prod', function () {
     .pipe(gulp.dest('./public/js'));
 })
 
+gulp.task('bower', function() {
+  gulp
+    .src($.mainBowerFiles('**/*.js'))
+    .pipe($.concat('build.js'))
+    .pipe(gulp.dest('./public/lib'));
+  gulp
+    .src('bower_components/**/*.css')
+    .pipe($.concat('build.css'))
+    .pipe($.cssmin())
+    .pipe(gulp.dest('./public/lib'));
+});
+
+gulp.task('copy', function() {
+  gulp.src(['src/img/**'])
+    .pipe(gulp.dest('public/img'));
+  gulp.src(['src/favicon.png', 'src/CNAME'])
+    .pipe(gulp.dest('public'));
+});
+
 gulp.task('build:prod', ['clean'], function () {
   gulp.start(['jade:prod', 'sass:prod', 'babel:prod', 'bower', 'copy']);
-  //gulp.start(['jade:prod', 'sass:prod', 'babel:prod']);
 });
 
 gulp.task('build:dev', ['clean'], function () {
   gulp.start(['jade:dev', 'sass:dev', 'babel:dev', 'bower', 'copy']);
-  //gulp.start(['jade:prod', 'sass:prod', 'babel:prod']);
 });
-
-function randomPort() {
-  return Math.floor(Math.random() * 65535);
-}
 
 var random_port = randomPort();
 var livereload_port = randomPort();
@@ -130,25 +131,17 @@ gulp.task('watch', function () {
   gulp.watch(['src/**/*.js'], ['babel:dev'])
 });
 
-gulp.task('copy', function() {
-  gulp.src(['src/img/**'])
-    .pipe(gulp.dest('public/img'));
-  gulp.src(['src/favicon.png', 'src/CNAME'])
-    .pipe(gulp.dest('public'));
+gulp.task('open', ['build:dev', 'connect', 'watch'], function() {
+  gulp.src('').pipe($.open({uri:'http://localhost:' + random_port}));
 });
+
+gulp.task('default', ['open']);
 
 gulp.task('deploy', function(done) {
   return gulp.src('./public/**/**')
     .pipe($.ghPages({branch: "master"}));
 });
 
-gulp.task('open', ['build:dev', 'connect', 'watch'], function() {
-  var options = {
-    uri: 'localhost:' + random_port,
-    app: 'Google Chrome'
-  };
-  gulp.src('./public/index.html')
-    .pipe($.open('<%file.path%>', options));
-});
-
-gulp.task('default', ['open']);
+function randomPort() {
+  return Math.floor(Math.random() * 65535);
+}
