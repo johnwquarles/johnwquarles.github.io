@@ -133,11 +133,15 @@ gulp.task('watch', function () {
   gulp.watch(['src/**/*.js'], ['babel:dev'])
 });
 
-gulp.task('open', ['build:dev', 'connect', 'watch'], function() {
+gulp.task('open:dev', ['build:dev', 'connect', 'watch'], function() {
   gulp.src('').pipe($.open({uri:'http://localhost:' + random_port}));
 });
 
-gulp.task('default', ['open']);
+gulp.task('open:prod', ['build:prod', 'connect', 'watch'], function() {
+  gulp.src('').pipe($.open({uri:'http://localhost:' + random_port}));
+});
+
+gulp.task('default', ['open:dev']);
 
 gulp.task('deploy', function(done) {
   return gulp.src('./public/**/**')
