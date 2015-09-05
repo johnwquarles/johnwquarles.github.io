@@ -1,1 +1,100 @@
-<!DOCTYPE html><html lang="en-US" ng-app="app"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>quarl.es</title><link href="http://fonts.googleapis.com/css?family=Roboto|Passion+One|BenchNine" rel="stylesheet" type="text/css"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="lib/build.css"><link rel="icon" href="favicon.png" type="image/x-icon"></head><body ng-controller="Main as main"><header ng-controller="Header as header"><span us-spinner="{radius: 10, width: 5, length: 12, color: '#FFF', position: absolute, top: '42px', left: '160px'}" spinner-key="codewars"></span><div class="topnav"><ul ng-cloak ng-class="{'hidden': header.loading}" class="left"><li class="cwlogo"><a href="http://www.codewars.com/users/johnwquarles"><img src="http://dev.codewars.com/images/logo-220ae435.png"></a></li><li class="leftSub"><ul class="leftSub"><li class="completed"><p>{{header.myData.codeChallenges.totalCompleted}} Code Challenges Completed</p></li><li class="rank"><p>Leaderboard Position: {{header.myData.leaderboardPosition}} / {{header.outOf}}</p></li><li class="misc"><span>Overall:<span style="color:{{header.myData.ranks.overall.color}}"> {{header.myData.ranks.overall.name}}</span><span>, Javascript:</span><span style="color:{{header.myData.ranks.languages.javascript.color}};"> {{header.myData.ranks.languages.javascript.name}}</span><span>, C#:</span><span style="color:{{header.myData.ranks.languages.csharp.color}}"> {{header.myData.ranks.languages.csharp.name}}</span></span></li><li class="points"><p>Honor: {{header.myData.honor}}, Overall Score: {{header.myData.ranks.overall.score}}</p></li></ul></li></ul><ul class="right"><div class="link-icon"><li><a href="mailto:john.w.quarles@gmail.com"><i class="fa fa-3x fa-envelope"></i></a></li><p><a href="mailto:john.w.quarles@gmail.com">email me</a></p></div><div class="link-icon"><li><a href="https://qdevdive.blogspot.com/"><i class="fa fa-3x fa-book"></i></a></li><p><a href="https://qdevdive.blogspot.com/">blog</a></p></div><div class="link-icon"><li><a href="https://twitter.com/johnwquarles"><i class="fa fa-3x fa-twitter"></i></a></li><p><a href="https://twitter.com/johnwquarles">twitter</a></p></div><div class="link-icon"><li><a href="https://github.com/johnwquarles"><i class="fa fa-3x fa-github"></i></a></li><p><a href="https://github.com/johnwquarles">github</a></p></div><div class="link-icon"><li><a href="https://www.linkedin.com/in/johnwquarles"><i class="fa fa-3x fa-linkedin-square"></i></a></li><p><a href="https://www.linkedin.com/in/johnwquarles">linkedin</a></p></div><div class="link-icon"><li><a href="https://soundcloud.com/johnwq"><i class="fa fa-3x fa-soundcloud"></i></a></li><p><a href="https://soundcloud.com/johnwq">soundcloud</a></p></div></ul></div><div class="headerPart"><img src="img/me.jpeg" ng-click="main.iconColorChange()"><h1>quarl.es</h1></div></header><div class="content"><div class="top-buttons"><div class="feature-contain"><div ng-repeat="site in main.features" class="feature-button"><div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="./img/{{site.img}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{site.tech}}</span></span></a></div></div></div><div ng-repeat="site in main.mysites" class="link-button"><div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="./img/{{site.img}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{site.tech}}</span></span></a></div></div></div><div class="bottom-half"><p class="separate">Contributions:</p><div class="bottom-buttons"><div ng-repeat="contrib in main.contribs" class="contrib-button"><div class="copy-contain"><a ng-href="{{contrib.link_url}}"><img ng-src="./img/{{contrib.img}}" alt="{{contrib.alt}}"><span class="copy"><span>{{contrib.copy}}</span></span></a><a ng-href="{{contrib.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{contrib.tech}}</span></span></a></div></div></div></div></div><footer></footer></body><script src="lib/build.js"></script><script src="js/app.js"></script><script src="js/controllers.js"></script><script src="js/factories.js"></script><script src="js/HeaderCtrl.js"></script><script src="js/MainCtrl.js"></script><script src="js/AjaxFac.js"></script><script src="js/ColorsFac.js"></script><script src="js/FeaturesFac.js"></script><script src="js/LinksFac.js"></script><script src="js/ContribsFac.js"></script></html>
+<!DOCTYPE html>
+<html lang="en-US" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>quarl.es</title>
+    <link href="http://fonts.googleapis.com/css?family=Roboto|Passion+One|BenchNine" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="lib/build.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+  </head>
+  <body ng-controller="Main as main">
+    <header ng-controller="Header as header"><span us-spinner="{radius: 10, width: 5, length: 12, color: '#FFF', position: absolute, top: '42px', left: '160px'}" spinner-key="codewars"></span>
+      <div class="topnav">
+        <ul ng-cloak ng-class="{'hidden': header.loading}" class="left">
+          <li class="cwlogo"><a href="http://www.codewars.com/users/johnwquarles"><img src="http://dev.codewars.com/images/logo-220ae435.png"></a></li>
+          <li class="leftSub">
+            <ul class="leftSub">
+              <li class="completed">
+                <p>{{header.myData.codeChallenges.totalCompleted}} Code Challenges Completed</p>
+              </li>
+              <li class="rank">
+                <p>Leaderboard Position: {{header.myData.leaderboardPosition}} / {{header.outOf}}</p>
+              </li>
+              <li class="misc"><span>Overall:<span style="color:{{header.myData.ranks.overall.color}}"> {{header.myData.ranks.overall.name}}</span><span>, Javascript:</span><span style="color:{{header.myData.ranks.languages.javascript.color}};"> {{header.myData.ranks.languages.javascript.name}}</span><span>, C#:</span><span style="color:{{header.myData.ranks.languages.csharp.color}}"> {{header.myData.ranks.languages.csharp.name}}</span></span></li>
+              <li class="points">
+                <p>Honor: {{header.myData.honor}}, Overall Score: {{header.myData.ranks.overall.score}}</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <div class="link-icon">
+            <li><a href="mailto:john.w.quarles@gmail.com"><i class="fa fa-3x fa-envelope"></i></a></li>
+            <p><a href="mailto:john.w.quarles@gmail.com">email me</a></p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://qdevdive.blogspot.com/"><i class="fa fa-3x fa-book"></i></a></li>
+            <p><a href="https://qdevdive.blogspot.com/">blog</a></p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://twitter.com/johnwquarles"><i class="fa fa-3x fa-twitter"></i></a></li>
+            <p><a href="https://twitter.com/johnwquarles">twitter</a></p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://github.com/johnwquarles"><i class="fa fa-3x fa-github"></i></a></li>
+            <p><a href="https://github.com/johnwquarles">github</a></p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://www.linkedin.com/in/johnwquarles"><i class="fa fa-3x fa-linkedin-square"></i></a></li>
+            <p><a href="https://www.linkedin.com/in/johnwquarles">linkedin</a></p>
+          </div>
+          <div class="link-icon">
+            <li><a href="https://soundcloud.com/johnwq"><i class="fa fa-3x fa-soundcloud"></i></a></li>
+            <p><a href="https://soundcloud.com/johnwq">soundcloud</a></p>
+          </div>
+        </ul>
+      </div>
+      <div class="headerPart"><img src="img/me.jpeg" ng-click="main.iconColorChange()">
+        <h1>quarl.es</h1>
+      </div>
+    </header>
+    <div class="content">
+      <div class="top-buttons">
+        <div class="feature-contain">
+          <div ng-repeat="site in main.features" class="feature-button">
+            <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="./img/{{site.img}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{site.tech}}</span></span></a></div>
+            <p class="notice">Note: The Unity Web Player doesn't currently play nice with Chrome;</p>
+            <p class="notice">Please access Earth Invasion with Firefox, Internet Explorer or Safari.</p>
+          </div>
+        </div>
+        <div ng-repeat="site in main.mysites" class="link-button">
+          <div class="copy-contain"><a ng-href="{{site.link_url}}"><img ng-src="./img/{{site.img}}" alt="{{site.alt}}"><span class="copy"><span>{{site.copy}}</span></span></a><a ng-href="{{site.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{site.tech}}</span></span></a></div>
+        </div>
+      </div>
+      <div class="bottom-half">
+        <p class="separate">Contributions:</p>
+        <div class="bottom-buttons">
+          <div ng-repeat="contrib in main.contribs" class="contrib-button">
+            <div class="copy-contain"><a ng-href="{{contrib.link_url}}"><img ng-src="./img/{{contrib.img}}" alt="{{contrib.alt}}"><span class="copy"><span>{{contrib.copy}}</span></span></a><a ng-href="{{contrib.github_url}}"><i class="fa fa-2x fa-github"></i><span class="tech"><span ng-cloak>{{contrib.tech}}</span></span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+  <script src="lib/build.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/factories.js"></script>
+  <script src="js/HeaderCtrl.js"></script>
+  <script src="js/MainCtrl.js"></script>
+  <script src="js/AjaxFac.js"></script>
+  <script src="js/ColorsFac.js"></script>
+  <script src="js/FeaturesFac.js"></script>
+  <script src="js/LinksFac.js"></script>
+  <script src="js/ContribsFac.js"></script>
+</html>
