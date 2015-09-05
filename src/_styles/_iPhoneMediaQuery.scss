@@ -2,6 +2,10 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 767px)  {
   .content {
 
+    p.notice {
+      font-size: 14px;
+    }
+
     .feature-button .copy-contain {
       span.copy {
         display: none;
