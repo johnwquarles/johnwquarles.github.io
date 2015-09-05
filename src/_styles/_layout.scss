@@ -9,6 +9,14 @@ body {
 
   text-align: center;
 
+  p.notice {
+    color: red;
+    line-height: 0;
+    font-family: 'BenchNine', sans-serif;
+    font-size: 18px;
+    transition: all $transitiontime linear;
+  }
+
   .feature-button .copy-contain {
     span.copy {
       height: $featureHeightS;

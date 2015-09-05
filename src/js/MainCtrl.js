@@ -20,7 +20,7 @@ angular.module('app.controllers')
 
   vm.iconColorChange = function() {
     var icons = [].slice.call(document.querySelectorAll(".link-button img, .contrib-button img, .feature-button img, .header img, i, span.tech, p.separate"));
-    var lis = [].slice.call(document.querySelectorAll(".topnav ul li i, .topnav p, .topnav span, .topnav a"));
+    var lis = [].slice.call(document.querySelectorAll(".topnav ul li i, .topnav p, .topnav span, .topnav a, p.notice"));
     var nowTime = new Date().getTime();
     var deltaTime = nowTime - startTime;
     var offset = deltaTime % changeTime;
