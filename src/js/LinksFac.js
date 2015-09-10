@@ -2,6 +2,15 @@ angular.module('app.factories')
 
 .factory('Links', function() {
   return [
+    { img: "getsorted.png",
+      link_url: "https://github.com/johnwquarles/getsorted#readme",
+      alt: "Get Sorted",
+      github_url: "https://github.com/johnwquarles/getsorted",
+      tech: "Tech: Node.js",
+      copy: 'Feeling out of sorts? Hate leaving the command line (hello phantomjs "users")? \
+            Watch your computer put disorganized arrays into perfect order! \
+            Fight entropy today in beautiful ANSI color!'},
+
     { img: "movieagenda.png",
       link_url: "http://quarl.es/movieagenda",
       alt: "Movie Agenda",
