@@ -7,9 +7,8 @@ angular.module('app.factories')
       alt: "Get Sorted",
       github_url: "https://github.com/johnwquarles/getsorted",
       tech: "Tech: Node.js",
-      copy: 'Feeling out of sorts? Hate leaving the command line (hello phantomjs "users")? \
-            Watch your computer put disorganized arrays into perfect order! \
-            Fight entropy today in beautiful ANSI color!'},
+      copy: "Pardner, you look lost. How 'bout we choose an algorithm from the command line and see how disorganized arrays get sorted? \
+            GET SORTED, pardner, and you'll never be out of sorts again!"},
 
     { img: "movieagenda.png",
       link_url: "http://quarl.es/movieagenda",
