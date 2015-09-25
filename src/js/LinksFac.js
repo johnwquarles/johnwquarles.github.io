@@ -2,6 +2,15 @@ angular.module('app.factories')
 
 .factory('Links', function() {
   return [
+    { img: "earthinvasion.png",
+      link_url: "http://quarl.es/earthinvasion",
+      alt: "Earth Invasion",
+      github_url: "https://github.com/johnwquarles/earthinvasion",
+      tech: "Tech: C#, Unity 3D",
+      copy: "The invasion has begun! Fight \
+            to the pulse-pounding beats of chiptune legend DJ Cutman from multiple \
+            2D and 3D perspectives as the music advances in time to your triumphs."},
+
     { img: "getsorted.png",
       link_url: "https://github.com/johnwquarles/getsorted#readme",
       alt: "Get Sorted",
