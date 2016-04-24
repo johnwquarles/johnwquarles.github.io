@@ -1,7 +1,12 @@
 'use strict';
 
 angular.module('app.factories').factory('Links', function () {
-  return [{ img: 'earthinvasion.png',
+  return [{img: 'cloud-amp.png',
+    link_url: 'http://quarl.es/cloud-amp',
+    alt: 'Cloud-Amp',
+    github_url: 'https://github.com/johnwquarles/cloud-amp',
+    tech: 'Angular2, TypeScript, RxJS, Web Audio API, JavaScript(ES6), HTML5, Sass',
+    copy: 'Insert SoundCloud track URLs into Cloud-Amp and choose your tune from the track tiles it generates! You can also adjust song pitches on the fly. Created for my own my own use and to learn Angular2.'}, {img: 'earthinvasion.png',
     link_url: 'http://quarl.es/earthinvasion',
     alt: 'Earth Invasion',
     github_url: 'https://github.com/johnwquarles/earthinvasion',
